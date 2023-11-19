@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: aliceblue;
+        width: 80%;
+        min-height: 15vh;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      a {
+        margin: 10px;
+        text-decoration: none;
+        font-size: 25px;
+      }
+      .tags {
+        flex-direction: row;
+        overflow: hidden;
+        height: 15vh;
+        transition: height 1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .tags {
+            height: 0;
+            order: 2;
+        }
+        #nav-btn {
+            order: 1;
+    }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Navheaders</h1>
+      <div class="tags">
+        <a href="">Click</a>
+        <a href="">here</a>
+        <a href="">you ca into other</a>
+      </div>
+      <button id="nav-btn">═</button>
+    </div>
+  </body>
+  <script>
+    let flasg = false;
+    const btn = document.getElementById("nav-btn");
+    const tagsShow = document.querySelector(".tags");
+    btn.addEventListener("click", () => {
+        if(!flasg) {
+            tagsShow.style.height='0'
+            flasg=true
+            btn.innerHTML = "║"
+        } else {
+            tagsShow.style.height='15vh';
+            flasg=false
+            btn.innerHTML = "══"
+        }
+    });
+  </script>
+</html>
