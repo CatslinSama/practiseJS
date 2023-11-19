@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 90%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+      }
+      .title {
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid;
+      }
+      .show {
+        height: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h3>title-1</h3>
+        <div class="show">
+          <p>
+            I'll love you, dear, I'll love you <br />
+            Till China and Africa meet,<br />
+            And the river jumps over the mountain<br />
+            And the salmon sing in the street,<br />
+          </p>
+        </div>
+      </div>
+      <div class="title">
+        <h3>title-2</h3>
+        <div class="show">
+          <p>
+            I'll love you, dear, I'll love you <br />
+            Till China and Africa meet,<br />
+            And the river jumps over the mountain<br />
+            And the salmon sing in the street,<br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const titles = document.querySelectorAll(".title");
+    const shows = document.querySelectorAll(".show");
+    titles.forEach((title, index) => {
+      title.addEventListener("click", () => {
+        shows[index].style.height === "0px"
+          ? (shows[index].style.height = "200px")
+          : (shows[index].style.height = "0");
+      });
+    });
+  </script>
+</html>
