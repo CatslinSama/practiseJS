@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 90%;
+            margin: auto;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="num">0</h1>
+        <div>
+            <button class="reduce">-</button>
+            <button class="resert">resert</button>
+            <button class="add">+</button>
+        </div>
+    </div>
+</body>
+<script>
+    let count = 0;
+    const number = document.querySelector('.num');
+    const btnElements = document.querySelectorAll('button');
+    console.log(btnElements);
+    btnElements.forEach((btn) => {
+        btn.addEventListener('click',(b) => {
+            const click = b.currentTarget.classList;
+            click.contains('reduce') ? count-- : click.contains('resert') ? count=0 : count++;
+            (count>0) ? number.style.color="green": number.style.color="red";
+            number.textContent = count;
+        })
+    });
+</script>
+</html>

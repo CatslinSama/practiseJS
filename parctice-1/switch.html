@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 100px;
+        border: none;
+        margin: 10px;
+      }
+      .container {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid;
+        padding: 20px;
+      }
+      .nav {
+        display: flex;
+        align-items: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img class="user" src="" alt="" style="width: 100px" />
+      <div class="nav">
+        <button class="btn pre">Previous</button>
+        <button class="btn pre">Next</button>
+      </div>
+      <h3 class="user"></h3>
+      <span class="user"></span>
+      <p class="user"></p>
+    </div>
+  </body>
+  <script type="module">
+    import userData from "./newuser.js";
+    import users from "./user1.js";
+    const usershow = document.querySelectorAll(".user");
+
+    const previousBtns = document.querySelectorAll(".pre");
+    let count = 0;
+
+    previousBtns.forEach((element) => {
+      element.addEventListener("click", function () {
+        try {
+          userData.setuserData(
+            users[count].nameimg,
+            users[count].username,
+            users[count].usermark,
+            users[count].userintroduce
+          );
+          count++;
+        } catch (e) {
+          count = 0;
+        }
+        userData.showData(usershow);
+      });
+    });
+
+    userData.showData(usershow);
+  </script>
+</html>
