@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 40%;
+        height: 100vh;
+        margin: auto;
+        background-color: aliceblue;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-around;
+      }
+      p {
+        border: 2px solid;
+        padding: 10px;
+        display: inline-block;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <button>大于330</button>
+        <button>小于330</button>
+      </div>
+      <div id="foodshow">
+        <div id="foodname"></div>
+        <div id="foodspend"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const foods = [
+      {
+        name: "food-1",
+        consumper: 10,
+      },
+      {
+        name: "food-",
+        consumper: 20,
+      },
+      {
+        name: "food-",
+        consumper: 30,
+      },
+      {
+        name: "food-",
+        consumper: 40,
+      },
+      {
+        name: "food-",
+        consumper: 50,
+      },
+      {
+        name: "food-",
+        consumper: 60,
+      },
+    ];
+
+    const foodshow = document.getElementById("foodshow");
+
+    function showFood(num, consumpe, foodnamd, foodspend) {
+      var p = document.createElement("p");
+      num
+        ? (p.appendChild(foodnamd),
+          p.appendChild(foodspend),
+          foodshow.appendChild(p))
+        : console.log("false");
+    }
+
+    const btns = document.querySelectorAll("button");
+    console.log(btns);
+    btns[0].addEventListener("click", () => {
+      foodshow.innerHTML = "";
+      foods.forEach((food) => {
+        var foodnamd = document.createTextNode(food.name);
+        var foodspend = document.createTextNode(food.consumper);
+        showFood(food.consumper>30, food.consumper, foodnamd, foodspend);
+      });
+    });
+    btns[1].addEventListener("click", () => {
+      foodshow.innerHTML = "";
+      foods.forEach((food) => {
+        var foodnamd = document.createTextNode(food.name);
+        var foodspend = document.createTextNode(food.consumper);
+        showFood(food.consumper<30, food.consumper, foodnamd, foodspend);
+      });
+    });
+  </script>
+</html>
