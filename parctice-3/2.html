@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // const information = prompt("What's the 'official' name of JavaScript?");
+    // information === 'ECMAScript' ? alert('Right') : alert("You don't know? 'ECMAScript' !")
+
+    // const age = prompt('inout your miss number')
+    // age >= 14 && age <= 90 ? alert('ture') : alert('false');
+
+    // const userName = prompt('input you userName')
+    // const password = prompt('input you password')
+    // userName === 'jack' && password == '155132' ? alert("hi jack") : alert('sorry we are waiting jack')\
+
+    // function ask(question, yes, no) {
+    //   if (confirm(question)) yes();
+    //   else no();
+    // }
+
+    // function showOk() {
+    //   alert("You agreed.");
+    // }
+
+    // function showCancel() {
+    //   alert("You canceled the execution.");
+    // }
+
+    // // 用法：函数 showOk 和 showCancel 被作为参数传入到 ask
+    // ask("Do you agree?", showOk, showCancel);
+
+    // function showAge(question, yes, no) {
+    //   question ? yes() : no()
+    // }
+
+    // showAge(
+    //   confirm("how old are you"),
+    //   function () {
+    //     alert("welcome");
+    //   },
+    //   function () {
+    //     alert("sorry");
+    //   }
+    // );
+
+    const ask = (question, yes, no) => {
+      confirm(question) ? yes() : no();
+    };
+
+    ask(
+      "Do you agree?",
+      () => {
+        alert("You agreed.");
+      },
+      () => {
+        alert("You canceled the execution.");
+      }
+    );
+  </script>
+</html>

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body></body>
+  <script>
+    // read() 提示输入两个值，并将其保存为对象属性，属性名分别为 a 和 b。
+    // sum() 返回保存的值的和。
+    // mul() 将保存的值相乘并返回计算结果。
+    let calculator = {
+      read() {
+        this.a = +prompt('input a')
+        this.b = +prompt('input b')
+      },
+      sum() {
+        return this.a + this.b;
+      },
+      mul() {
+        return this.a * this.b;
+      },
+    };
 
-</body>
-<script>
-    // const information = prompt("What's the 'official' name of JavaScript?");
-    // information === 'ECMAScript' ? alert('Right') : alert("You don't know? 'ECMAScript' !")
-
-    // const age = prompt('inout your miss number')
-    // age >= 14 && age <= 90 ? alert('ture') : alert('false');
-
-
-    const userName = prompt('input you userName')
-    const password = prompt('input you password')
-
-    userName === 'jack' && password == '155132' ? alert("hi jack") : alert('sorry we are waiting jack')
-</script>
+    calculator.read();
+    alert(calculator.sum());
+    alert(calculator.mul());
+  </script>
 </html>
