@@ -18,8 +18,23 @@
         }
         return maxResult
     }
+    function getMinSubSum(array) {
+        let maxResult = 0;
+        let addResult = 0;
+
+        for(let num of array) {
+            addResult += num
+            maxResult = Math.min(maxResult,addResult)
+            if(addResult > 0) addResult=0
+        }
+        return maxResult
+    }
 
     alert(getMaxSubSum([-1, 2, 3, -9])); // 5
+    alert(getMinSubSum([-1, 2, 3, -9])); // 3
+
+
+    
     alert(getMaxSubSum([-1, 2, 3, -9, 11])); // 11
     alert(getMaxSubSum([-2, -1, 1, 2])); // 3
     alert(getMaxSubSum([100, -9, 2, -3, 5])); // 100
